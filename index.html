@@ -1,0 +1,184 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f5e9">
+  <title>NatureNudge AI | Find Your Outside</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <a class="logo" href="#">
+      <span class="logo-icon">✳</span> NatureNudge<span class="ai">AI</span>
+    </a>
+    <nav>
+      <a href="#explore">Explore</a>
+      <a href="#progress">My progress</a>
+    </nav>
+    <a href="#explore" class="nav-button">Get outside ↗</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow">✳ YOUR DAILY DOSE OF NATURE</span>
+        <h1>Less scrolling.<br>More <span>living.</span></h1>
+        <p>
+          A little fresh air can change your whole day.
+          Let AI turn your free time into a real-world adventure.
+        </p>
+        <a href="#explore" class="primary-button">
+          Find my adventure <span>↗</span>
+        </a>
+        <div class="hero-note">
+          <span class="status-dot"></span>
+          Your next adventure starts outside.
+        </div>
+      </div>
+
+      <div class="hero-art" aria-label="Illustration of a sunny outdoor landscape">
+        <div class="sun"></div>
+        <div class="hill hill-back"></div>
+        <div class="hill hill-front"></div>
+        <div class="path"></div>
+        <div class="plant plant-one">🌿</div>
+        <div class="plant plant-two">🌳</div>
+        <div class="floating-card">
+          <span>✦ TODAY'S REMINDER</span>
+          <strong>The world is bigger<br>than your screen.</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats" id="progress">
+      <div class="stat">
+        <span class="stat-icon">🌱</span>
+        <div>
+          <strong id="minutes">0 min</strong>
+          <small>Outdoor time logged</small>
+        </div>
+      </div>
+      <div class="stat">
+        <span class="stat-icon">🧭</span>
+        <div>
+          <strong id="completed">0</strong>
+          <small>Adventures completed</small>
+        </div>
+      </div>
+      <div class="stat">
+        <span class="stat-icon">🔥</span>
+        <div>
+          <strong id="streak">0 days</strong>
+          <small>Current streak</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="explore section" id="explore">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">YOUR NEXT CHAPTER</span>
+          <h2>Where will today take you?</h2>
+          <p>Tell us a little about your day. We'll suggest an adventure.</p>
+        </div>
+        <span class="leaf-decoration">❋</span>
+      </div>
+
+      <div class="workspace">
+        <form class="preferences panel" id="adventureForm">
+          <h3>Build your adventure</h3>
+
+          <label for="duration">How much time do you have?</label>
+          <select id="duration">
+            <option value="10">10 minutes</option>
+            <option value="20" selected>20 minutes</option>
+            <option value="30">30 minutes</option>
+            <option value="60">1 hour</option>
+          </select>
+
+          <label for="place">Your surroundings</label>
+          <select id="place">
+            <option value="Park or garden">Park or garden</option>
+            <option value="Neighborhood">Neighborhood</option>
+            <option value="Campus">College campus</option>
+            <option value="Backyard or balcony">Backyard or balcony</option>
+            <option value="Nature trail">Nature trail</option>
+          </select>
+
+          <label>What sounds fun?</label>
+          <div class="interest-grid">
+            <button type="button" class="interest active" data-interest="Nature discovery">🌿 Nature</button>
+            <button type="button" class="interest" data-interest="Wildlife observation">🐦 Wildlife</button>
+            <button type="button" class="interest" data-interest="Outdoor photography">📸 Photography</button>
+            <button type="button" class="interest" data-interest="Mindful walking">🚶 Walking</button>
+            <button type="button" class="interest" data-interest="Gardening">🪴 Gardening</button>
+            <button type="button" class="interest" data-interest="Outdoor creativity">🎨 Creativity</button>
+          </div>
+
+          <label for="difficulty">Adventure intensity</label>
+          <select id="difficulty">
+            <option value="Easy">Easy and relaxing</option>
+            <option value="Moderate">A little challenging</option>
+          </select>
+
+          <button type="submit" class="primary-button generate-button" id="generateBtn">
+            ✳ Generate my mission
+          </button>
+          <p class="privacy-note">🌱 Simple activities. No equipment needed.</p>
+        </form>
+
+        <div class="mission panel" id="missionCard" aria-live="polite">
+          <div class="mission-top">
+            <span class="mission-badge">✦ YOUR ADVENTURE</span>
+            <span class="ai-label">AI INSPIRED</span>
+          </div>
+
+          <div class="mission-illustration" id="missionIllustration">
+            <span id="missionEmoji">🌳</span>
+            <div class="illustration-caption">A little adventure awaits</div>
+          </div>
+
+          <div class="mission-info">
+            <div class="mission-meta">
+              <span id="missionTime">◷ 20 minutes</span>
+              <span id="missionDifficulty">○ Easy</span>
+            </div>
+            <h3 id="missionTitle">Your next adventure is waiting.</h3>
+            <p id="missionDescription">
+              Choose your preferences and generate a mission to get started.
+            </p>
+            <div class="steps" id="missionSteps">
+              <div class="step"><span>1</span><p>Choose your adventure preferences.</p></div>
+              <div class="step"><span>2</span><p>Generate a mission tailored to you.</p></div>
+              <div class="step"><span>3</span><p>Head outside and enjoy the moment.</p></div>
+            </div>
+            <button class="complete-button" id="completeBtn" disabled>
+              ✓ Mark adventure complete
+            </button>
+            <p class="completion-note" id="completionNote">
+              Complete your mission outdoors, then log your progress.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <span>✳ A SMALL REMINDER</span>
+      <h2>Some of life's best moments<br>don't need a screen.</h2>
+      <p>Generate your mission. Put your phone away. Go live it.</p>
+    </section>
+  </main>
+
+  <footer>
+    <a class="logo" href="#">✳ NatureNudge<span class="ai">AI</span></a>
+    <p>Made for more moments outside. 🌿</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
